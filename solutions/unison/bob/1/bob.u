@@ -1,0 +1,16 @@
+bob.empty: Text -> Boolean
+bob.empty sentence = Text.isEmpty (trim sentence)
+
+bob.question: Text -> Boolean
+bob.question sentence = endsWith "?" (trim sentence)
+
+bob.yell: Text -> Boolean
+bob.yell sentence = ((toUppercase sentence) == sentence) && (not (Text.isEmpty (Text.filter isLetter sentence)))
+
+bob.response : Text -> Text
+bob.response sentence =
+  if empty sentence then "Fine. Be that way!"
+  else if (question sentence) && (yell sentence) then "Calm down, I know what I'm doing!"
+  else if question sentence then "Sure."
+  else if yell sentence then "Whoa, chill out!"
+  else "Whatever."
