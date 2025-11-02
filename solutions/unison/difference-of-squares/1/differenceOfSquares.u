@@ -1,0 +1,10 @@
+differenceOfSquares.squareOfSum : Nat -> Nat
+differenceOfSquares.squareOfSum n =
+  sum = (n * (n + 1)) / 2
+  sum * sum
+
+differenceOfSquares.sumOfSquares : Nat -> Nat
+differenceOfSquares.sumOfSquares n = (n * (n + 1) * (2*n + 1)) / 6
+
+differenceOfSquares.difference : Nat -> Nat
+differenceOfSquares.difference n = (squareOfSum n) - (sumOfSquares n)
