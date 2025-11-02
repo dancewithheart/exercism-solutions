@@ -1,0 +1,5 @@
+leap.leap : Nat -> Boolean
+leap.leap year = or (divide year 400) (and (not (divide year 100)) (divide year 4))
+
+divide : Nat -> Nat -> Boolean
+divide n k = n Nat.% k Nat.== 0
